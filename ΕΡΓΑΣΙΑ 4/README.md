@@ -8,7 +8,7 @@
 <br>
 <br>
 
-<h1>Notes:</h1>
+<h1>Matlab Notes:</h1>
 
 <h3>randn vs rand</h3>
 
