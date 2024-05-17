@@ -2,6 +2,9 @@ clear; clc; close all
 
 load eye.mat
 
+%% ΕΡΩΤΗΜΑΤΑ α),β)
+
+
 % display only the first image from the loaded data
 figure;
 imshow(I(:,:,1))
@@ -36,4 +39,33 @@ normalized_approx = (approx - mean_approx)/std_approx;
 
 figure; 
 histogram(normalized_approx(:),100);
+
+
+
+%% ΕΡΩΤΗΜΑ γ)
+
+% creation of noise
+even_noise = rand(size(approx));      
+noisy_approx = approx + even_noise;
+
+% noise distribution
+figure;
+histogram(even_noise(:),100);
+
+% noisy image display
+figure;
+subplot(1,2,1); imshow(approx); title('Original Image');
+subplot(1,2,2); imshow(noisy_approx); title('Noisy Image');
+
+
+% check the central limit theorem from noisy_approx
+% each pixel is a random variable
+mean_noisy_approx = mean(noisy_approx(:));
+std_noisy_approx = std(noisy_approx(:));
+
+% normalize approx to get N(0,1)
+normalized_noisy_approx = (noisy_approx - mean_noisy_approx)/std_noisy_approx;
+
+figure; 
+histogram(normalized_noisy_approx(:),100);
 
