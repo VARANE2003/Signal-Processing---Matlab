@@ -63,7 +63,7 @@ subplot(1,2,2); imshow(noisy_approx); title('Noisy Image');
 mean_noisy_approx = mean(noisy_approx(:));
 std_noisy_approx = std(noisy_approx(:));
 
-% normalize approx to get N(0,1)
+% normalize noisy_approx to get N(0,1)
 normalized_noisy_approx = (noisy_approx - mean_noisy_approx)/std_noisy_approx;
 
 figure; 
