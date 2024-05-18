@@ -5,7 +5,7 @@ clc
 % Signal Generation
 n=0:1000;
 phi = rand(1)*2*pi;        % random phase uniformly distributed between 0 and 2π
-s = sin(0.25*n+phi);      
+s = sin(0.25*n+phi);       
 
 
 % White Gaussian Noise Generation
@@ -85,8 +85,6 @@ hW = Rvv\rwv;
 w_hat = filter(hW,1,v);
 
 
-% error of noise approximation by the Wiener filter
-norm(w-w_hat)   
 
 
 % Noise Removal
@@ -113,10 +111,5 @@ imagesc(crosscor_s / length(s)); colorbar; title('Autocorrelation of s(n)');
 
 %% ΕΡΩΤΗΜΑ στ)
 
-
-
-
-
-
-
-
+% error of noise approximation by the Wiener filter of length 2
+error2 = norm(w-w_hat)   
