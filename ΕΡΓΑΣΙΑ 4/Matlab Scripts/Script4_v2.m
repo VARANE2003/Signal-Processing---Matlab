@@ -5,7 +5,7 @@ clc
 % Signal Generation
 n=0:1000;
 phi = rand(1)*2*pi;        % random phase uniformly distributed between 0 and 2π
-s = sin(0.25*n+phi);       % deterministic signal s(n)
+s = sin(0.25*n+phi);      
 
 
 % White Gaussian Noise Generation
